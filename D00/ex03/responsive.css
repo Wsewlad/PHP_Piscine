@@ -1,0 +1,54 @@
+body {
+	background-color: #F8F8F8;
+	font-size: 2vw;
+}
+h1, h2	{
+	text-align: center;
+}
+#foto	{
+	text-align: center;
+}
+#foto img {
+	width: 30%;
+}
+#pt {
+	width: 90%;
+	margin: 0 auto 0 auto;
+}
+#pt th, td {
+	width: 5%;
+	padding: 0.2%;
+}
+#pt td {
+	background-color: white;
+}
+
+#pt td b {
+	color: blue;
+	display: block;
+	text-align: center;
+}
+#pt td sup {
+	font-size: 0.3em;
+	display: block;
+	text-align: right;
+}
+#pt td sub {
+	font-size: 0.5em;
+	display: block;
+	text-align: left;
+}
+#pt td.alkali-metal {background-color: #ff6666}
+#pt td.alkaline-earth-metal {background-color: #ffdead}
+#pt td.lanthanide {background-color: #ffbfff}
+#pt td.actinide {background-color: #ff99cc}
+#pt td.transition-metal {background-color: #ffc0c0}
+#pt td.post-transition-metal {background-color: #cccccc}
+#pt td.metalloid {background-color: #a1ffc3}
+#pt td.polyatomic-nonmetal {background-color: #a1ffc3}
+#pt td.diatomic-nonmetal {background-color: #e7ff8f}
+#pt td.noble-gas {background-color: #c0ffff}
+#pt td.unknown-chemical-properties {background-color: #e8e8e8}
+#pt td:hover {
+	background-color: #F8F8F8;
+}
