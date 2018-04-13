@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>clac</title>
+	<style>
+		#culc {
+			padding: 50px;
+			margin: 0 auto 0 auto;
+			width: 800px;
+			background-color: #ED9F66;
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+		}
+		#culc input {
+			width: 200px;
+			font-size: 20px;
+			border-radius: 1px;
+			padding: 10px;
+		}
+		#culc select {
+			height: 50px;
+			width: 50px;
+			font-size: 20px;
+		}
+	</style>
+</head>
+<body>
+	<div id="culc">
+		<input type="text" id="left">
+		<select name="operators" id="operators">
+			<option value="+">+</option>
+			<option value="-">-</option>
+			<option value="*">*</option>
+			<option value="/">/</option>
+			<option value="%">%</option>
+		</select>
+		<input type="text" id="right">
+		<input id="submit" type="submit" value="Try me!">
+	</div>
+
+	<script>
+		setInterval(function(){ alert("Please, use me..."); }, 30000);
+
+		var butt = document.getElementById('submit');
+		butt.addEventListener('click', culc);
+
+		function culc()
+		{
+			var res;
+			var operator = document.getElementsByTagName('select')[0].value;
+			var lop = document.getElementById('left').value;
+			var rop = document.getElementById('right').value;
+
+			if (!lop || !rop)
+			{
+				alert('Error :(');
+				return;
+			}
+
+			lop = Number(lop);
+			rop = Number(rop);
+
+			if ((!lop && lop != 0) || (!rop && rop != 0) || lop < 0 || rop < 0)
+			{
+				alert('Error :(');
+				return;
+			}
+
+			if ((operator == '/' || operator == '%') && rop == 0)
+			{
+				console.log("It's over 9000!");
+				alert("It's over 9000!");
+				return;
+			}
+
+			switch (operator) {
+				case '+':
+					res = lop + rop;
+					break;
+				case '-':
+					res = lop - rop;
+					break;
+				case '*':
+					res = lop * rop;
+					break;
+				case '/':
+					res = lop / rop;
+					break;
+				case '%':
+					res = lop % rop;
+					break;
+			}
+			alert(res);
+			console.log(res);
+		}
+	</script>
+</body>
+</html>

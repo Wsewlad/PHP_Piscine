@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>balloon</title>
+	<style>
+		#balloon {
+			background-color: red;
+			border-radius: 50%;
+			margin: 0 auto 0 auto;
+		}
+	</style>
+</head>
+<body>
+	<div id="balloon" style="width: 200px;height: 200px"></div>
+	<script>
+		var balloon = document.getElementById('balloon');
+		balloon.addEventListener("click", grow);
+		balloon.addEventListener("mouseleave", leave);
+		var colors = ['red', 'green', 'blue'];
+		var i = 0;
+
+		function grow()
+		{
+			if (this.offsetHeight > 420)
+			{
+				this.style.height = '200px';
+				this.style.width = '200px';
+			}
+			else
+			{
+				this.style.height = this.offsetHeight + 10 + 'px';
+				this.style.width = this.offsetWidth + 10 + 'px';
+			}
+			i++;
+			this.style.backgroundColor = colors[i % 3];
+		}
+
+		function leave()
+		{
+			if (this.offsetHeight >= 205)
+			{
+				this.style.height = this.offsetHeight - 5 + 'px';
+				this.style.width = this.offsetWidth - 5 + 'px';
+				i--;
+				i = i < 0 ? 2 : i;
+				this.style.backgroundColor = colors[i % 3];
+			}
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+
+<div style="margin-top: 50px;">
+<div id="prof_cart">
+    <?php include("html/cart.html"); ?>
+</div>
+<?php if ($_SESSION["logged_in_user"] == "admin"):
+    if ($_GET[error])
+    {
+        echo $_GET[error];
+    }
+?>
+<div id="adm_prof">                  
+    <form action="addcat.php" method="post">
+        <br/>
+        <p> Add categories </p>
+        <input required="" type="text" name="name" value="" placeholder="name"><br/>
+        <input required="" type="submit" name="submit" value="add categories"/><br/>
+    </form>
+    <?php
+    echo $_GET[sc];
+    ?>
+     <form action="dellcat.php" method="post">
+        <br/>
+        <p>Dell categories </p>
+        <input required="" type="text" name="name" value="" placeholder="name"><br/>
+        <input required="" type="submit" name="submit" value="dell categories"/><br/>
+    </form>
+        <?php
+    echo $_GET[sd];
+    ?>
+    <form action="addprod.php" method="post">
+        <br/>
+        <p> Add products </p>
+        <input required="" type="text" name="name" value="" placeholder="name">
+        <br/>
+        <input height="30" required="" type="text" name="description" value="" placeholder="description">
+        <br/>
+        <input required="" type="number" name="stock" min="1" value="" placeholder="stock">
+        <br/>
+        <input required="" type="text" name="img" value="" placeholder="img location">
+        <br/>
+        <input required="" type="number" name="price" value="" min="0" placeholder="price">
+        <br/>
+        <input required="" type="submit" name="submit" value="add product"/>
+    </form>
+            <?php
+        echo $_GET[sp];
+        ?>
+    <form action="dellprod.php" method="post">
+        <br/>
+        <p> dell products </p>
+        <input required="" type="text" name="name" value="" placeholder="name">
+        <br/>
+        <input required="" type="submit" name="submit" value="dell product"/>
+        <br/>
+    </form>
+    <?php
+        echo $_GET[pd];
+        ?>
+         <form action="delluser.php" method="post">
+        <br/>
+        <p> dell user </p>
+        <input required="" type="text" name="name" value="" placeholder="name">
+        <br/>
+        <input required="" type="submit" name="submit" value="dell user"/>
+        <br/>
+    </form>
+    <?php
+        echo $_GET[ud];
+        ?>
+
+         <form action="prod_to_cat.php" method="post">
+        <br/>
+        <p> add product to category </p>
+        <input required="" type="text" name="name_prod" value="" placeholder="name of product">
+        <br/>
+        <input required="" type="text" name="name_cat" value="" placeholder="name of category">
+        <br/>
+        <input required="" type="submit" name="submit" value="add product to category"/>
+        <br/>
+    </form>
+    <?php
+        echo $_GET[aad];
+        ?>
+
+
+</div>
+<?php endif; ?>
+</div>
+

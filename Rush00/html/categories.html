@@ -1,0 +1,35 @@
+<?php
+
+// Create connection
+$conn = mysqli_connect($_SESSION['servername'], $_SESSION['username'], $_SESSION['password'], $_SESSION['dbname']);
+// Check connection
+if (!$conn) {
+    header('Location: install.php');
+    return (0);
+    //die("Connection failed: " . mysqli_connect_error());
+}
+
+$sql = "SELECT * FROM categories";
+$result = mysqli_query($conn, $sql);
+
+
+?>
+
+<div id="categories">
+    <h1>Categories</h1>
+    <?php
+
+    if (mysqli_num_rows($result) > 0) {
+        while($row = mysqli_fetch_assoc($result))
+        {
+            echo '<a href="index.php?c=items&cat_id='.$row["cat_id"].'">
+                <div class="item category">
+                    <div class="img"><img src="'.$row["img"].'" alt="'.$row["name"].'"></div>
+                    <h2>'.$row["name"].'</h2>
+                </div>
+                </a>';
+        }
+    }
+
+    ?>
+</div>

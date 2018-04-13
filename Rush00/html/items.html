@@ -1,0 +1,61 @@
+<?php
+
+// Create connection
+$conn = mysqli_connect($_SESSION['servername'], $_SESSION['username'], $_SESSION['password'], $_SESSION['dbname']);
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+$sql = "SELECT * FROM categories";
+$result = mysqli_query($conn, $sql);
+$sql = 'SELECT name FROM categories WHERE cat_id='.$_GET['cat_id'];
+$cat_name = mysqli_fetch_assoc(mysqli_query($conn, $sql));
+$sql = 'SELECT * FROM products INNER JOIN connect ON connect.cat_id ='.$_GET['cat_id'].' AND connect.prod_id = products.prod_id';
+$products = mysqli_query($conn, $sql);
+
+if ($_GET['cart'] != NULL)
+{
+    if ($_SESSION['cart'] == NULL)
+    {
+        $_SESSION['cart'] = array();
+    }
+    $exists = 0;
+    $i = 0;
+    foreach ($_SESSION['cart'] as $product)
+    {
+        if ($product['id'] == $_GET['cart'])
+        {
+            $_SESSION['cart'][$i]['count'] += 1;
+            $exists = 1;
+            break;
+        }
+        $i++;
+    }
+    if ($exists != 1)
+    {
+        array_push($_SESSION['cart'], array('id' => $_GET['cart'], 'count' => 1));
+    }
+    header("Location: index.php?c=items&cat_id=".$_GET['cat_id']);
+}
+?>
+
+<div id="items">
+    <h1><?php echo $cat_name['name']; ?></h1>
+    <?php
+
+    if (mysqli_num_rows($products) > 0) {
+        while ($prod = mysqli_fetch_assoc($products))
+        {
+            echo '<div class="item product">
+                <div class="img"><img src="'.$prod["img"].'" alt="'.$prod["name"].'"></div>
+                <h2>'.$prod["name"].'</h2>
+                <p>Price '.$prod["price"].' ₴</p>
+                <p><a href="index.php?c=items&cat_id='.$_GET["cat_id"].'&cart='.$prod["prod_id"].'">Add to cart</a></p>
+                <div class="desc">'.$prod["description"].'</div>
+            </div>';
+        }
+    }
+
+    ?>
+</div>

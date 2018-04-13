@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>To do</title>
+	<style>
+		#todo {
+			width: 742px;
+			font-size: 20px;
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			min-height: 95px;
+			margin: 0 auto 0 auto;
+		}
+		#header {
+			height: 50px;
+			width: 100%;
+			background-color: lightgreen;
+			color: white;
+		}
+		#top {
+			width:70%;
+			float:left;
+			line-height: 50px;
+			text-align: center;
+			font-weight: bold;
+		}
+		#new {
+			height: 100%;
+			width: 30%;
+			font-size: 20px;
+			background-color: lightgreen;
+			color: white;
+		}
+		#new:hover {
+			box-shadow: 0 0px 8px 0 rgba(0, 0, 0, 0.2), 0 0px 20px 0 rgba(0, 0, 0, 0.19);
+			cursor: pointer;
+		}
+		#ft_list div {
+			border-bottom: 3px solid yellowgreen;
+			padding: 10px;
+		}
+		#ft_list div:hover {
+			box-shadow: 0 0px 8px 0 rgba(0, 0, 0, 0.2), 0 0px 20px 0 rgba(0, 0, 0, 0.19);
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<div id="todo">
+		<div id="header">
+			<div id="top">TODO LIST</div>
+			<button id="new">New</button>
+		</div>
+		<div id="ft_list"></div>
+	</div>
+	<script src="todo.js"></script>
+</body>
+</html>

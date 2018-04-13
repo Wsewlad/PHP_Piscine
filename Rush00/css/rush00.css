@@ -1,0 +1,126 @@
+body {
+	margin: 0;
+	color: #33CCCC;
+}
+#wrap {
+	width: 1200px;
+	height: 100%;
+	margin: 0 auto 0 auto;
+	position: relative;
+}
+div #header {
+	background-color: rgba(51, 92, 103, 0.9);
+	padding: 100px 0 100px 0;
+	width: 100%;
+	display: flex;
+	border-radius: 10px;
+}
+#logo {
+	width: 30%;
+	font-size: 30px;
+	font-weight: bold;
+	text-align: center;
+}
+#top-menu {
+	width: 20%;
+	text-align: center;
+}
+#sign_in_up {
+	width: 40%;
+	text-align: right;
+}
+#sign_in_up a {
+	padding: 20px;
+	background-color: rgba(51, 92, 103, 0.5);
+	border-radius: 10px;
+}
+#sign_in_up a:hover {
+	background-color: rgba(51, 92, 103, 0.3);
+	border: 1px solid rgba(51, 92, 103, 1);
+}
+#main {
+	padding-bottom: 150px;
+	width: 90%;
+	min-height: 45vh;
+	margin: 0 auto 0 auto;
+}
+#categories h1, #items h1 {
+	text-align: center;
+}
+.item {
+	width: 32%;
+	text-align: center;
+	border: 1px solid #33CCCC;
+	border-radius: 10px;
+	margin: 5px;
+	float: left;
+}
+.item img {
+	height: 100%;
+}
+.product {
+	height: 400px;
+}
+.product .img {
+	padding: 10px;
+	height: 150px;
+}
+.product a, a.btn {
+	padding: 10px;
+	background-color: rgba(51, 92, 103, 0.9);
+	border-radius: 10px;
+	color: white;
+}
+.product a:hover, a.btn:hover {
+	background-color: rgba(51, 92, 103, 0.7);
+	border: 1px solid rgba(51, 92, 103, 1);
+}
+.product .desc {
+	padding: 0 10px 0 10px;
+}
+.category {
+	height: 250px;
+}
+.category .img {
+	height: 70%;
+	padding: 10px;
+}
+#footer {
+	margin-top: 150px;
+	float: left;
+	padding: 50px 0 50px 0;
+	width: 100%;
+	background-color: rgba(51, 92, 103, 0.9);
+	text-align: center;
+	font-size: 30px;
+	border-radius: 10px;
+}
+a {
+	text-decoration: none;
+	color: #33CCCC;
+}
+#cart_table {
+	width: 90%;
+}
+#cart_table td {
+	border: 1px solid #33CCCC;
+	padding: 10px;
+}
+.cart_img {
+	width: 50px;
+}
+#prof_cart, #adm_prof {
+	float: left;
+	width: 50%;
+}
+#cart_conteiner h2 {
+	text-align: center;
+}
+input.counter {
+	width: 40px;
+	height: 40px;
+	margin-left: 5px;
+	font-size: 14px;
+	color: #33CCCC;
+	text-align: center;
+}
