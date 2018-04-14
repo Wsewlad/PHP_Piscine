@@ -1,0 +1,98 @@
+body {
+	margin: 0;
+}
+
+h1, h2 {
+	text-align: center;
+}
+
+a {
+	text-decoration: none;
+	color: white;
+	border: 1px solid white;
+	padding: 5px;
+}
+
+#header {
+	height: 100px;
+	background-color: grey;
+	padding: 10px;
+	font-size: 20px;
+}
+
+#header #logo {
+	width: 70%;
+	float:left;
+	line-height: 100px;
+	font-weight: bold;
+}
+
+#header #sign_in_up {
+	width: 30%;
+	float: left;
+	line-height: 100px;
+}
+
+#navbar_top {
+	background-color: brown;
+	padding: 10px;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+#navbar_top ul {
+	margin: 0;
+}
+
+#navbar_top ul li {
+	display: inline;
+	padding: 10px;
+}
+
+#index_cont p {
+	text-align: center;
+	font-size: 70px;
+}
+
+#players table {
+	width: 70%;
+	text-align: center;
+	border-collapse: collapse;
+	margin: 0 auto 0 auto;
+}
+
+#players table td {
+	border: 1px solid grey;
+	padding: 5px;
+}
+
+#lobby a {
+	color: brown;
+}
+
+#chat {
+	width: 70%;
+	background-color: brown;
+	margin: 0 auto 0 auto;
+}
+
+#chat #content {
+	width: 100%;
+	min-height: 200px;
+	margin: 0 auto 10px auto;
+	background-color: white;
+}
+
+#chat #chat_input {
+	width: 80%;
+	height: 50px;
+	font-size: 20px;
+}
+
+#chat #send {
+	width: 19%;
+	height: 50px;
+	background-color: grey;
+	display: block;
+	float: right;
+}

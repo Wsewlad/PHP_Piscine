@@ -1,0 +1,20 @@
+<div id="lobby">
+	<h1>Lobby</h1>
+	<div id="chat">
+		<h2>Chat</h2>
+		<div id="content"></div>
+		<input type="text" id="chat_input" placeholder="Type something here....">
+		<button type="button" id="send" onclick="loadcont()">Send</button>
+	</div>
+	<script>
+		var xhttp = new XMLHttpRequest();
+		xhttp = new XMLHttpRequest();
+  		xhttp.onreadystatechange = function() {
+		    if (this.readyState == 4 && this.status == 200) {
+		      document.getElementById("content").innerHTML = this.responseText + "<br>";
+		    }
+		  };
+		  xhttp.open("GET", "getcustomer.asp?q="+str, true);
+		  xhttp.send();
+	</script>
+</div>
